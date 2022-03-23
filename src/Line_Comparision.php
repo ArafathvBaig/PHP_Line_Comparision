@@ -74,7 +74,28 @@ class LineComparission
         } elseif ($length1 > $length2) {
             echo "\nLength1 is Greater than Length2\n";
         } else {
-            echo "\nLength2 is Greater than Length1\n";
+            echo "\nLength1 is Smaller than Length2\n";
+        }
+    }
+
+    /**
+     * Function to compare two lengths
+     * Passing length1 and length2 as parameters
+     * Printing lengths are equal, greater or smaller
+     */
+    function compareLengths($length1, $length2)
+    {
+        $length1 = (string) $length1;
+        $length2 = (string) $length2;
+        // echo gettype($length1);
+        // echo gettype($length2);
+        $compare = strcmp($length1, $length2);
+        if ($compare == 0) {
+            echo "\nBoth have Equal Length\n";
+        } elseif ($compare > 0) {
+            echo "\nLength1 is Greater than Length2\n";
+        } else {
+            echo "\nLength1 is Smaller than Length2\n";
         }
     }
 }
@@ -85,4 +106,5 @@ $length1 = $lineComparission->calculateLength();
 echo "\nLength 1: " . $length1 . "\n\n";
 $length2 = $lineComparission->calculateLength();
 echo "\nLength 2: " . $length2 . "\n";
-$lineComparission->checkEquality($length1, $length2);
+//$lineComparission->checkEquality($length1, $length2);
+$lineComparission->compareLengths($length1, $length2);
